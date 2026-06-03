@@ -1,2 +1,4 @@
 @use '../styles/global' as *;
-.contact__links { display: flex; gap: 1.5rem; flex-wrap: wrap; font-size: 0.95rem; }
+.contact__links { display: flex; gap: 1.5rem; flex-wrap: wrap; font-size: 0.95rem;
+  a { display: flex; align-items: center; gap: 0.4rem; }
+}

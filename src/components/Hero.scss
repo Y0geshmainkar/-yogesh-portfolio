@@ -40,7 +40,7 @@
     margin-top: 1.4rem;
     font-size: 0.88rem;
 
-    a, span { color: rgba(255,255,255,0.9); transition: color 0.2s; }
+    a, span { color: rgba(255,255,255,0.9); transition: color 0.2s; display: flex; align-items: center; gap: 0.3rem; }
     a:hover { color: $white; text-decoration: none; }
   }
 }
