@@ -26,7 +26,7 @@ const portfolioSlice = createSlice({
       {
         title: 'Frontend Developer',
         company: 'NTT Data Services',
-        period: '2024 – Present',
+        period: '2022 – 2024',
         bullets: [
           'Developed and integrated new features in Platea, a banking modernization platform, using React.js; built reusable components and front-end libraries for scalable UI architecture',
           'Integrated third-party APIs including Jumio (KYC, ID Verification & SSN Validation), Real-Time Payments, VolPay, FedNow/Finzly, Akoya Account Aggregation, and Marqeta Cards',

@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux'
 import type { RootState } from '../store/store'
+import { IconTrophy } from './Icons'
 import './Awards.scss'
 
 export default function Awards() {
@@ -10,7 +11,7 @@ export default function Awards() {
       <div className="awards__cards">
         {awards.map((a) => (
           <div className="awards__card" key={a.title}>
-            <span className="awards__icon">🏆</span>
+            <span className="awards__icon"><IconTrophy /></span>
             <div>
               <strong>{a.title}</strong>
               <p>{a.org} · {a.date}</p>
