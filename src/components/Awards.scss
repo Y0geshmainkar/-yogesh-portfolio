@@ -1,0 +1,23 @@
+@use '../styles/global' as *;
+
+.awards__cards { display: flex; flex-wrap: wrap; gap: 1rem; }
+
+.awards__card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid #e8e8e8;
+  border-radius: $radius;
+  padding: 1rem 1.2rem;
+  flex: 1;
+  min-width: 240px;
+  transition: box-shadow 0.2s, transform 0.2s;
+  border-left: 4px solid gold;
+
+  &:hover { box-shadow: $shadow; transform: translateY(-2px); }
+
+  strong { display: block; font-size: 0.92rem; color: $dark; }
+  p { font-size: 0.82rem; color: $muted; margin-top: 0.2rem; }
+}
+
+.awards__icon { font-size: 1.8rem; }

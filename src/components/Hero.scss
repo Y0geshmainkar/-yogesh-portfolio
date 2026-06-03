@@ -1,0 +1,46 @@
+@use '../styles/global' as *;
+
+.hero {
+  background: linear-gradient(135deg, $dark 0%, $primary 100%);
+  color: $white;
+  text-align: center;
+  padding: 3.5rem 2rem 2.5rem;
+  border-radius: $radius;
+
+  &__avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    border: 3px solid rgba(255,255,255,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 0 auto 1rem;
+  }
+
+  h1 { font-size: 2.2rem; letter-spacing: 2px; }
+  h2 {
+    font-size: 1rem;
+    font-weight: 400;
+    color: rgba(255,255,255,0.8);
+    border: none;
+    text-transform: none;
+    letter-spacing: normal;
+    margin-top: 0.3rem;
+  }
+
+  &__links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.4rem;
+    font-size: 0.88rem;
+
+    a, span { color: rgba(255,255,255,0.9); transition: color 0.2s; }
+    a:hover { color: $white; text-decoration: none; }
+  }
+}

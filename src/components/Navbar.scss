@@ -1,0 +1,42 @@
+@use '../styles/global' as *;
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: $dark;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+
+  &__brand {
+    color: $white;
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    background: $primary;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+
+    li {
+      color: rgba(255,255,255,0.85);
+      cursor: pointer;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+      &:hover { color: $white; }
+    }
+  }
+
+  @media (max-width: 600px) {
+    ul { gap: 0.8rem; }
+    &__brand { font-size: 1rem; }
+  }
+}
