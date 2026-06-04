@@ -1,46 +1,66 @@
 @use '../styles/global' as *;
 
 .hero {
-  background: linear-gradient(135deg, $dark 0%, $primary 100%);
-  color: $white;
+  background: url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1200&q=80') center/cover no-repeat;
+  position: relative;
   text-align: center;
-  padding: 3.5rem 2rem 2.5rem;
+  padding: 5rem 2rem 3.5rem;
   border-radius: $radius;
+  border: 1px solid $border;
+  overflow: hidden;
+  margin-bottom: 1.2rem;
 
-  &__avatar {
-    width: 72px;
-    height: 72px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.2);
-    border: 3px solid rgba(255,255,255,0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.6rem;
-    font-weight: 700;
-    margin: 0 auto 1rem;
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.78);
   }
 
-  h1 { font-size: 2.2rem; letter-spacing: 2px; }
+  > * { position: relative; z-index: 1; }
+
+  h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: $white;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+
   h2 {
-    font-size: 1rem;
-    font-weight: 400;
-    color: rgba(255,255,255,0.8);
+    display: inline-block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: $accent;
     border: none;
-    text-transform: none;
-    letter-spacing: normal;
-    margin-top: 0.3rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-top: 0.6rem;
+    padding: 0;
   }
+
+  &__cursor {
+    animation: blink 0.7s step-end infinite;
+    color: $accent;
+  }
+
+  @keyframes blink { 50% { opacity: 0; } }
 
   &__links {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1rem;
-    margin-top: 1.4rem;
-    font-size: 0.88rem;
+    gap: 1.2rem;
+    margin-top: 2rem;
+    font-size: 0.85rem;
 
-    a, span { color: rgba(255,255,255,0.9); transition: color 0.2s; display: flex; align-items: center; gap: 0.3rem; }
-    a:hover { color: $white; text-decoration: none; }
+    a, span {
+      color: $muted;
+      transition: color 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    a:hover { color: $accent; text-decoration: none; }
   }
 }

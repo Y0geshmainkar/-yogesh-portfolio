@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import type { RootState } from '../store/store'
 import { useSelector } from 'react-redux'
 import { IconEmail, IconPhone, IconLocation, IconLinkedin, IconGithub } from './Icons'
@@ -7,11 +8,20 @@ export default function Hero() {
   const { name, title, email, phone, location, linkedin, github } = useSelector(
     (s: RootState) => s.portfolio.personal
   )
+  const [displayed, setDisplayed] = useState('')
+
+  useEffect(() => {
+    let i = 0
+    const timer = setInterval(() => {
+      setDisplayed(title.slice(0, ++i))
+      if (i === title.length) clearInterval(timer)
+    }, 60)
+    return () => clearInterval(timer)
+  }, [title])
   return (
     <section className="hero" id="about">
-      <div className="hero__avatar">{name.split(' ').map(n => n[0]).join('')}</div>
       <h1>{name}</h1>
-      <h2>{title}</h2>
+      <h2><span>{displayed}</span><span className="hero__cursor">|</span></h2>
       <div className="hero__links">
         <span><IconLocation /> {location}</span>
         <span><IconPhone /> {phone}</span>
